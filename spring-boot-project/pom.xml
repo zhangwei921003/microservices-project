@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>spring-jdbc</module>
         <module>spring-webmvc</module>
         <module>rest-on-spring-webmvc</module>
     </modules>
