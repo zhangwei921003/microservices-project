@@ -30,7 +30,9 @@ public class UserHandler {
     }
 
     public Mono<ServerResponse> findAll(ServerRequest request){
+        List<User> userList = repository.findAll();
+        Flux<User> userFlux = Flux.fromIterable(userList);
         //下来查询
-      return  null;
+      return  ServerResponse.ok().body(userFlux,User.class);
     }
 }
