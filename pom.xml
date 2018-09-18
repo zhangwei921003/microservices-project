@@ -19,8 +19,16 @@
         <module>spring-cloud-project</module>
         <module>spring-boot-project</module>
         <module>concurrency-project</module>
+        <module>spring-project</module>
     </modules>
     <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
