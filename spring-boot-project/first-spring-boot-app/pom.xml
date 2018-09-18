@@ -11,7 +11,7 @@
   <artifactId>first-spring-boot-app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>first-spring-boot-app</name>
-  <url>http://maven.apache.org</url>
+  <packaging>war</packaging>
   <dependencies>
 
     <!-- Webflux-->
@@ -20,11 +20,35 @@
       <artifactId>spring-boot-starter-webflux</artifactId>
     </dependency>
 
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- 增减war插件，可以设置成忽略web.xml文件-->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml >false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>

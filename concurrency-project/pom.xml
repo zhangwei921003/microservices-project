@@ -14,7 +14,7 @@
 
     <modules>
         <module>java-8-concurrency</module>
-        <module>java-10-concurrency</module>
+        <!--<module>java-10-concurrency</module>-->
     </modules>
 
 
