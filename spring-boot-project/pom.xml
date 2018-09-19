@@ -18,6 +18,7 @@
         <module>rest-on-spring-webmvc</module>
         <module>first-spring-boot-app</module>
         <module>spring-boot-bean-validation</module>
+        <module>spring-application</module>
   </modules>
 
 
