@@ -49,14 +49,23 @@ public class Application {
          * An ApplicationPreparedEvent is sent just before the refresh is started but after bean definitions have been loaded.
          * An ApplicationStartedEvent is sent after the context has been refreshed but before any application and command-line runners have been called.
          * An ApplicationReadyEvent is sent after any application and command-line runners have been called. It indicates that the application is ready to service requests.
-         * An ApplicationFailedEvent is sent if there is an exception on startup.
+         * An ApplicationFailedEvent is sent if there is an exception on startup
+         *
+         * 自定义监听器添加的3中方式
+         * ① {@link SpringApplicationBuilder#listeners(ApplicationListener[])}
+         * ② {@link SpringApplication#addListeners(ApplicationListener[])}
+         * ③ 添加属性值到META-INF/spring.factories
+         *      key = org.springframework.context.ApplicationListener
+         *      value =com.purchasing.Application.StartedListener,\
+         *                   com.purchasing.Application.RefreshedListener,\
+         *                   com.purchasing.Application.ClosedListener
          */
         SpringApplication springApplication = new SpringApplication(Application.class);
         Map<String, Object> properties = new LinkedHashMap<>();
         properties.put("server.port", 0);
         springApplication.setDefaultProperties(properties);
         springApplication.setWebApplicationType(WebApplicationType.REACTIVE);
-        springApplication.addListeners(new StartedListener(),new RefreshedListener(),new ClosedListener());
+//        springApplication.addListeners(new StartedListener(),new RefreshedListener(),new ClosedListener());
         Set<ApplicationListener<?>> listeners =  springApplication.getListeners();
         listeners.forEach((listener) ->{
             System.out.println("监听事件："+listener.getClass().getName());
