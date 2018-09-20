@@ -1,0 +1,4 @@
+org.springframework.context.ApplicationListener=\
+  com.purchasing.Application.StartedListener,\
+  com.purchasing.Application.RefreshedListener,\
+  com.purchasing.Application.ClosedListener

@@ -15,10 +15,10 @@
     <modules>
         <module>spring-jdbc</module>
         <module>spring-webmvc</module>
-        <module>rest-on-spring-webmvc</module>
-        <module>first-spring-boot-app</module>
-        <module>spring-boot-bean-validation</module>
-        <module>spring-application</module>
+        <module>spring-boot-app</module>
+        <module>spring-boot-application</module>
+        <module>spring-boot-validation</module>
+        <module>spring-webmvc-rest</module>
   </modules>
 
 
