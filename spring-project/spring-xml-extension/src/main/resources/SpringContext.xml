@@ -2,27 +2,29 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:context-test="http://www.springframework.org/schema/context-test"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                                               http://www.springframework.org/schema/beans/spring-beans.xsd
                                               http://www.springframework.org/schema/context
-                                              http://www.springframework.org/schema/context/spring-context.xsd">
+                                              http://www.springframework.org/schema/context/spring-context.xsd
+                                              http://www.springframework.org/schema/context-test
+                                              http://www.springframework.org/schema/context/spring-context-test.xsd">
+    <!--Schema namespace  http://www.springframework.org/schema/context 成对出现，key-value 一一对应-->
     <!-- 配置schema是一一对应的关系，如上：beans ->spring-beans.xsd  context -> spring-context.xsd-->
     <!--<context:component-scan base-package="com.purchasing"/>-->
-
-   <!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="application.properties"/>
         <property name="fileEncoding" value="UTF-8"/>
-    </bean>-->
+    </bean>
 
     <!-- XML Schema 扩展代替Bean配置
            原因：1）形式简单
                      2）增强检查和校验，约束性-->
     <!-- 这段可以替换以上的Bean配置方式-->
-    <context:property-placeholder location="application.properties" file-encoding="utf-8"/>
-
-    <bean id="user" class="com.purchasing.model.User">
-        <property name="id" value="1"/>
-        <property name="name" value="${name}"/>
-    </bean>
-
+    <!--<context:property-placeholder  location="application.properties" file-encoding="utf-8"/>-->
+    <!--<bean id="user" class="com.purchasing.model.User">-->
+        <!--<property name="id" value="1"/>-->
+        <!--<property name="name" value="${name}"/>-->
+    <!--</bean>-->
+    <context-test:user bean-name="user"  id="1" name="${name}" />
 </beans>
