@@ -15,6 +15,8 @@
 
     <modules>
         <module>spring-xml-extension</module>
+        <module>spring-annotation-extension</module>
+        <module>spring-annotation-extension-autoconfig</module>
     </modules>
 
 </project>
