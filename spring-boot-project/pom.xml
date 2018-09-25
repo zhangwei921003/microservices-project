@@ -19,7 +19,8 @@
         <module>spring-boot-application</module>
         <module>spring-boot-validation</module>
         <module>spring-webmvc-rest</module>
-  </modules>
+        <module>spring-reactive</module>
+    </modules>
 
 
 </project>
