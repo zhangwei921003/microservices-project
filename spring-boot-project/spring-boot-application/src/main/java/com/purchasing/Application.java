@@ -64,7 +64,7 @@ public class Application {
         Map<String, Object> properties = new LinkedHashMap<>();
         properties.put("server.port", 0);
         springApplication.setDefaultProperties(properties);
-        springApplication.setWebApplicationType(WebApplicationType.REACTIVE);
+//        springApplication.setWebApplicationType(WebApplicationType.REACTIVE);
 //        springApplication.addListeners(new StartedListener(),new RefreshedListener(),new ClosedListener());
         Set<ApplicationListener<?>> listeners =  springApplication.getListeners();
         listeners.forEach((listener) ->{
@@ -72,7 +72,7 @@ public class Application {
         });
         //StartedListener,RefreshedListener,ClosedListener
         ConfigurableApplicationContext context = springApplication.run(args);
-        context.close();
+//        context.close();
         System.out.println(context.getClass().getSimpleName());
     }
 
